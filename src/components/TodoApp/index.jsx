@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import TodoForm from "././TodoForm";
 import TodoList from "././TodoList";
 
 function TodoApp() {
   const [tasks, setTasks] = useState([]);
-
-  const addTask = () => {
+  const addTask = (text) => {
+    if (!text || text.trim() === "") return;
     const newTask = {
       id: Date.now(),
-      text: text,
+      text: text.trim(),
       isDone: false,
     };
-    setTasks([...tasks, newTask]);
+    setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
   const deleteTask = (idToDelete) => {

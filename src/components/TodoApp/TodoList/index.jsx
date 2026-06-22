@@ -1,11 +1,22 @@
-import React from "react";
 import TodoItem from "./TodoItem";
 
 function TodoList({ tasks, deleteTask, toggleTask }) {
+  if (tasks.length === 0) {
+    return (
+      <p className="empty-message">The list is empty. Add your first task!</p>
+    );
+  }
   return (
-    <>
-      <TodoItem />
-    </>
+    <ul>
+      {tasks.map((task) => (
+        <TodoItem
+          key={task.id}
+          task={task}
+          deleteTask={deleteTask}
+          toggleTask={toggleTask}
+        />
+      ))}
+    </ul>
   );
 }
 
