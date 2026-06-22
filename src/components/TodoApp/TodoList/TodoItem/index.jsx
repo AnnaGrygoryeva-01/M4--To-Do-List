@@ -1,6 +1,8 @@
+import styles from "./TodoItem.module.sass";
+
 function TodoItem({ task, deleteTask, toggleTask }) {
   return (
-    <li>
+    <li className={styles.itemContainer}>
       <input type="checkbox" onChange={() => toggleTask(task.id)} />{" "}
       <p>{task.text}</p>{" "}
       <button onClick={() => deleteTask(task.id)}>Delete</button>

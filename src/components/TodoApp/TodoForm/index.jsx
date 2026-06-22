@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./TodoForm.module.sass";
 
 function TodoForm({ addTask }) {
   const [textInput, setTextInput] = useState("");
@@ -17,14 +18,15 @@ function TodoForm({ addTask }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
       <input
+        className={styles.inputField}
         type="text"
         value={textInput}
         onChange={handleChange}
-        placeholder="What needs to be done?"
+        placeholder="Add your task..."
       />
-      <button type="submit">Add</button>
+      <button type="submit">+</button>
     </form>
   );
 }

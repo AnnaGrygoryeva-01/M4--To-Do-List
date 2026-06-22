@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TodoForm from "././TodoForm";
 import TodoList from "././TodoList";
+import styles from "./TodoApp.module.sass";
 
 function TodoApp() {
   const [tasks, setTasks] = useState([]);
@@ -30,7 +31,7 @@ function TodoApp() {
   };
 
   return (
-    <article>
+    <article className={styles.mainContainer}>
       <h1>My To-Do List</h1>
       <TodoForm addTask={addTask} />
       <TodoList tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} />
