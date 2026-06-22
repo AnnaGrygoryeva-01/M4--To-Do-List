@@ -16,18 +16,15 @@ function TodoApp() {
   };
 
   const deleteTask = (idToDelete) => {
-    const updatedList = tasks.filter((task) => task.id !== idToDelete);
-    setTasks(updatedList);
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== idToDelete));
   };
 
   const toggleTask = (idToToggle) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === idToToggle) {
-        return { ...task, isDone: !task.isDone };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === idToToggle ? { ...task, isDone: !task.isDone } : task,
+      ),
+    );
   };
 
   return (
