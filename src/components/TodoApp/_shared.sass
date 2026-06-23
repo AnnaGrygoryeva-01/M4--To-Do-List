@@ -1,0 +1,37 @@
+$primary: #82e9f6
+$accent: #9cf3ff
+$bg: #000
+$text: #fff
+$muted: rgba(255,255,255,0.6)
+$error: #ff4d4d
+$radius: 30px
+$gap-sm: 8px
+$font-stack: sans-serif
+
+=flex($dir: row, $justify: flex-start, $align: center)
+  display: flex
+  flex-direction: $dir
+  justify-content: $justify
+  align-items: $align
+
+=btn
+  background-color: $primary
+  border-radius: 10%
+  border: 2px solid transparent
+  cursor: pointer
+  padding: 6px 10px
+
+=input
+  box-sizing: border-box
+  padding: 6px 8px
+  background: transparent
+  color: $text
+  border: none
+  outline: none
+
+%card
+  background-color: $bg
+  color: $text
+  border-radius: $radius
+  padding: 10px
+  font-family: $font-stack

@@ -1,40 +1,36 @@
+@use '../_shared' as *
+
 .formContainer
   box-sizing: border-box
   width: 80%
+  margin: 0 auto
   display: flex
   flex-direction: column
   align-items: center
   gap: 4px
 
   button
-    background-color: #82e9f6
-    border-radius: 10%
-    border: 2px solid transparent
-    cursor: pointer
+    +btn
 
 .inputWrapper
   width: 100%
-  display: flex
-  flex-direction: row
-  align-items: center
-  gap: 8px
+  +flex(row, flex-start, center)
+  gap: $gap-sm
 
   input
     flex: 1 1 auto
     min-width: 0
-    box-sizing: border-box
-    padding: 6px 8px
+    +input
 
   button
     flex: 0 0 auto
-    padding: 6px 10px
 
 
 .inputError
-  border: 2px solid red
+  border: 2px solid $error
   background-color: #ffe6e6
 
 .errorText
-  color: red
+  color: $error
   font-size: 14px
   margin-top: 5px
