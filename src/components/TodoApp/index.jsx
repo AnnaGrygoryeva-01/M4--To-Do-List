@@ -1,14 +1,15 @@
 import { useState } from "react";
-import TodoForm from "././TodoForm";
-import TodoList from "././TodoList";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
 import styles from "./TodoApp.module.sass";
+import { v4 as uuidv4 } from "uuid";
 
 function TodoApp() {
   const [tasks, setTasks] = useState([]);
   const addTask = (text) => {
     if (!text || text.trim() === "") return;
     const newTask = {
-      id: Date.now(),
+      id: uuidv4(),
       text: text.trim(),
       isDone: false,
     };
